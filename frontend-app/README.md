@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# Informe de Práctica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Integración de Diseño con Stitch
 
-Currently, two official plugins are available:
+Se utilizó Stitch para generar prototipos de las interfaces del sistema de gestión de inventario industrial. Los diseños obtenidos sirvieron como base para implementar las vistas en React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Diseños Generados
 
-## React Compiler
+* Dashboard administrativo
+* Gestión de productos
+* Gestión de categorías
+* Gestión de clientes
+* Gestión de ventas
+* Pantalla de inicio
+* Pantalla de inicio de sesión
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Prompts Utilizados
 
-## Expanding the ESLint configuration
+Los prompts empleados se encuentran documentados en este repositorio junto con las capturas de los diseños generados.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Implementación
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Se desarrolló una aplicación web utilizando:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* React + TypeScript
+* Node.js
+* PostgreSQL
+* Docker
+* JWT Authentication
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Evidencias
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Se adjuntan capturas de pantalla del sistema funcionando correctamente y de los diseños generados con Stitch.
