@@ -4,8 +4,6 @@ services:
       context: ./herramientas-node-api
     container_name: inventory-api
     restart: unless-stopped
-    ports:
-      - "4005:4005"
     environment:
       PORT: 4005
       NODE_ENV: ${NODE_ENV:-production}
@@ -13,7 +11,7 @@ services:
       DB_PORT: ${DB_PORT:-5432}
       DB_NAME: ${DB_NAME:-herramientas_app}
       DB_USER: ${DB_USER:-postgres}
-      DB_PASSWORD: ${DB_PASSWORD:?Database password is required}
+      DB_PASSWORD: ${DB_PASSWORD:-example}
       DB_SYNC_ALTER: ${DB_SYNC_ALTER:-false}
       JWT_SECRET: ${JWT_SECRET:?JWT secret is required}
     depends_on:
@@ -27,8 +25,6 @@ services:
       context: ./frontend-app
     container_name: inventory-frontend
     restart: unless-stopped
-    ports:
-      - "80:80"
     depends_on:
       - api
     networks:
@@ -38,8 +34,6 @@ services:
     image: postgres:16-alpine
     container_name: inventory-db
     restart: unless-stopped
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_DB: ${DB_NAME:-herramientas_app}
       POSTGRES_USER: ${DB_USER:-postgres}
